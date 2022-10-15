@@ -38,6 +38,7 @@ public class SpringSecurity{
                 .antMatchers("/users").hasRole("ADMIN")
                 .antMatchers("/users/**").hasRole("ADMIN")
                 .antMatchers("/createGame").hasAnyRole("ADMIN")
+                .antMatchers("/games").hasAnyRole("USER","ADMIN")
                 .antMatchers("/joinGame").hasAnyRole("USER","ADMIN")
                 .and().                                                                     // dispose of access to views
                 formLogin(
